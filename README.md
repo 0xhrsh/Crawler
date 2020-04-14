@@ -7,6 +7,15 @@ Requirements:
 - Other dependencies in `requirements.txt`
 
 Procedure:
-- git clone https://github.com/harsh-not-haarsh/Crawler
-- cd https://github.com/harsh-not-haarsh/Crawler
-- scrapy crawl gplay -o Apps.CSV
+- Clone the Repository
+```
+    git clone https://github.com/harsh-not-haarsh/Crawler
+```
+- Navigate to the Rpository
+```
+    cd crawler
+```
+- Crawl the PlayStore
+```
+    scrapy crawl gplay -o Apps.CSV
+```
