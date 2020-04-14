@@ -1,6 +1,7 @@
 # Crawler
 Web Crawler to get the information of Apps. 
-<br /> Sample data (for seed url: Candy rush) in Apps.csv
+<br /> Sample data (for seed url: Candy rush) in [a relative link](Apps.csv)
+
 
 ### Installation:
 Requirements:
