@@ -6,7 +6,9 @@ class GplaySpider(scrapy.Spider):
     inside = {}
 
     def start_requests(self):
-        urls = ['https://play.google.com/store/apps/details?id=com.google.android.apps.docs']
+        seed = input("\n\n\nEnter Seed URL : ")
+        print("processing for",seed,".....\n\n")
+        urls = [seed]
         for url in urls:
             yield scrapy.Request(url=url, callback=self.parse)
 
@@ -26,7 +28,7 @@ class GplaySpider(scrapy.Spider):
             self.inside[name.css('span::text').get()]=1
             yield{
                 'App Name': name.css('span::text').get(),
-                'Updated': downloads[0],
+                'Last Updated': downloads[0],
                 'Installs': downloads[4],
                 'Ratings': rating.css('div::text').get(),
                 'Adds': adds.css('div::text').get(),
