@@ -16,9 +16,12 @@ class GplaySpider(scrapy.Spider):
         downloads = response.css('span.htlgb')
         downloads = downloads.css('span::text').getall()
         rating = response.css('div.BHMmbe')
+        adds = response.css('div.bSIuKf')
+        genre = response.css('span.T32cc.UAO9ie')
+
         try:
             x = self.inside[name.css('span::text').get()]
-           
+
         except:
             self.inside[name.css('span::text').get()]=1
             yield{
@@ -26,6 +29,8 @@ class GplaySpider(scrapy.Spider):
                 'Updated': downloads[0],
                 'Installs': downloads[4],
                 'Ratings': rating.css('div::text').get(),
+                'Adds': adds.css('div::text').get(),
+                'Genre': genre.css('a::text').getall()[1],
             }
             next_app = response.css('div.wXUyZd a::attr(href)').getall()
             for app in next_app:
