@@ -15,6 +15,10 @@ Procedure:
 ```
     cd crawler
 ```
+- Install Dependencies
+```
+    pip install -r requirements.txt
+```
 - Crawl the PlayStore
 ```
     scrapy crawl gplay -o Apps.CSV
