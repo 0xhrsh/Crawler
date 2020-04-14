@@ -7,7 +7,7 @@ class GplaySpider(scrapy.Spider):
 
     def start_requests(self):
         seed = input("\n\n\nEnter Seed URL : ")
-        print("processing for",seed,".....\n\n")
+        print("processing for", seed, ".....\n\n")
         urls = [seed]
         for url in urls:
             yield scrapy.Request(url=url, callback=self.parse)
@@ -25,7 +25,7 @@ class GplaySpider(scrapy.Spider):
             x = self.inside[name.css('span::text').get()]
 
         except:
-            self.inside[name.css('span::text').get()]=1
+            self.inside[name.css('span::text').get()] = 1
             yield{
                 'App Name': name.css('span::text').get(),
                 'Last Updated': downloads[0],
@@ -39,6 +39,3 @@ class GplaySpider(scrapy.Spider):
                 if app is not None:
                     app = response.urljoin(app)
                     yield scrapy.Request(app, callback=self.parse)
-
-
-            
