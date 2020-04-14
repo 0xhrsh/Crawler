@@ -23,3 +23,8 @@ Procedure:
 ```
     scrapy crawl gplay -o Apps.CSV
 ```
+
+- Enter seed url (example: https://play.google.com/store/apps/details?id=com.king.candycrushsaga)
+```
+    Enter Seed URL : 
+```
