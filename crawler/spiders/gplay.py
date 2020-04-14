@@ -31,7 +31,7 @@ class GplaySpider(scrapy.Spider):
                 'Last Updated': downloads[0],
                 'Installs': downloads[4],
                 'Ratings': rating.css('div::text').get(),
-                'Adds': adds.css('div::text').get(),
+                'Ads': adds.css('div::text').get(),
                 'Genre': genre.css('a::text').getall()[1],
             }
             next_app = response.css('div.wXUyZd a::attr(href)').getall()
